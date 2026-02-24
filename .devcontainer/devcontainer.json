@@ -1,10 +1,4 @@
 {
-  "name": "Node Features Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:debian",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "latest"
-    }
-  },
-  "postCreateCommand": "npm install -g typescript tsx && npm install"
+  "name": "TypeScript Node Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node"
 }
