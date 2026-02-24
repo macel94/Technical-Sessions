@@ -1,0 +1,30 @@
+---
+config:
+  theme: neo
+  look: classic
+id: cca386d5-13ea-49ef-97aa-61189e0b98df
+---
+graph TD
+    subgraph "Platform"
+      subgraph "Authorized User / Automation"
+          A["<b>Initiate Request</b><br>A user with permission, or a scheduled trigger, starts the process via a self-service portal."];
+      end
+    end
+    subgraph AW["Automated Workflow"]
+        B["<b>Create & Store Secret</b><br>Script calls Entra ID to generate a new secret for the App Registration"];
+        D["<b>Audit & Notify</b><br>An event is logged, and a notification is automatically sent via JIRA ticket to the client"];
+    end
+    subgraph "Managed Services ITOPS"
+        C["<b>Assign Read Permissions</b><br> to Users & Applications"];
+        subgraph KV["<b>Client KeyVault"]
+            S["Secrets"];
+        end
+    end
+    subgraph "Platform Team (3GS/2IS)"
+        F["<b>Provides the Platform</b><br>Maintains the self-service portal and automation scripts for all teams to use."];
+    end
+
+    A --> AW 
+    B --> D
+    C --> KV
+    B -- Then writes new secret to --> KV

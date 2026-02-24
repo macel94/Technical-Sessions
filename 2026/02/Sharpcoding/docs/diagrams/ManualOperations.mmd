@@ -1,0 +1,38 @@
+graph TD
+    User((User))
+    
+    subgraph "Scripts"
+        GetSecrets[GetExpiringSecrets.ps1]
+        ProcessSecrets[ProcessSecretsFromCsvAndSharePoint.ps1]
+        CSV[CSV Output]
+    end
+
+    subgraph "Azure Resources"
+        EntraID[Entra ID]
+        KV[Key Vault]
+    end
+
+    subgraph "External Systems"
+        SP[(SharePoint List)]
+    end
+
+    %% Discovery Flow
+    User -->|Run| GetSecrets
+    GetSecrets -->|Read Apps & Secrets| EntraID
+    GetSecrets -->|Generate| CSV
+    
+    %% Renewal Flow
+    User -->|Run| ProcessSecrets
+    ProcessSecrets -->|Read| CSV
+    ProcessSecrets -->|Read Owners| SP
+    ProcessSecrets -->|Generate Secret| EntraID
+    ProcessSecrets -->|Store Secret & Assign Perms| KV
+
+    %% Styling
+    classDef script fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef azure fill:#0072C6,stroke:#333,stroke-width:2px,color:white;
+    classDef external fill:#e1e1e1,stroke:#333,stroke-width:2px;
+    
+    class GetSecrets,ProcessSecrets script;
+    class EntraID,KV azure;
+    class SP external;

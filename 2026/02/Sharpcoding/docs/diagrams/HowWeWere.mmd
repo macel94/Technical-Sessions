@@ -1,0 +1,24 @@
+---
+id: 7d5f9734-7b7c-46b4-bd16-576e0404b30a
+---
+graph TD
+    subgraph Customer
+        A["<b>1. Application is down</b><br>Business operations impacted"] --> B(<b>2. Customer complains</b>);
+        B --> ITOPS
+    end
+
+    subgraph Core Systems Team
+        F["Receives Ticket"];
+        G["<b>5a. Create & Send Secret</b><br>Manually generates the secret and emails it"];
+        F --> G
+    end
+
+    subgraph ITOPS["Managed Services ITOPS"]
+        C["<b>3. Emergency Troubleshooting</b><br>Time spent finding the root cause: an expired secret"];
+        C --> D{<b>4. Open Manual Ticket</b><br>Request a new secret via SolMan/JIRA};
+        D --> E[<b>5. WAIT</b><br>Process is blocked until another team responds];
+        G -- "<b>6. Receive Secret via Clear-Text Email</b><br>Major security risk" --x H["<b>7. Manually Share Secret</b><br>Sent again via insecure email/chat to the customer"];
+        H --> I["<b>8. Manual Tracking</b><br>Someone creates a personal calendar note for the next expiration"];
+    end
+
+    E --> F

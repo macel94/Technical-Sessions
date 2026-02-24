@@ -1,0 +1,32 @@
+graph TD
+    subgraph "Azure Resources"
+        EntraID[Entra ID]
+        
+        subgraph "SecretRenewalFunctions App"
+            FuncSync[SharePointSyncFunction]
+            FuncBackup[BackupFunction]
+            Blob[Blob Storage]
+        end
+    end
+
+    subgraph "External Systems"
+        SP[(SharePoint List)]
+    end
+
+    %% Sync Flow
+    FuncSync -->|Timer: 2x Daily| FuncSync
+    FuncSync -->|1. Fetch All Apps| EntraID
+    FuncSync -->|2. Sync Metadata| SP
+
+    %% Backup Flow
+    FuncBackup -->|Timer: 2x Daily| FuncBackup
+    FuncBackup -->|1. Read All Items| SP
+    FuncBackup -->|2. Read All Apps| EntraID
+    FuncBackup -->|3. Save JSON Backups| Blob
+
+    %% Styling
+    classDef azure fill:#0072C6,stroke:#333,stroke-width:2px,color:white;
+    classDef external fill:#e1e1e1,stroke:#333,stroke-width:2px;
+    
+    class EntraID,FuncSync,FuncBackup,Blob azure;
+    class SP external;

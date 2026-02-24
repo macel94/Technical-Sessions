@@ -1,0 +1,40 @@
+graph TD
+    subgraph "Azure Resources"
+        EntraID[Entra ID]
+        KV[Key Vault]
+        EG[Event Grid]
+        
+        subgraph "SecretRenewalFunctions App"
+            FuncRotate[SecretRotatorFunction]
+            FuncTrigger[OnSecretUpdatedTrigger]
+            Blob[Blob Storage]
+        end
+    end
+
+    subgraph "External Systems"
+        SP[(SharePoint List)]
+        Jira[Jira]
+    end
+
+    %% Proactive Rotation Flow
+    FuncRotate -->|Timer: Daily 6AM| FuncRotate
+    FuncRotate -->|1. Find Expiring Secrets| SP
+    FuncRotate -->|2. Check Existing| EntraID
+    FuncRotate -->|3. Generate New Secret| EntraID
+    FuncRotate -->|4. Update Secret| KV
+    
+    %% Event Driven Notification Flow
+    KV -->|Secret Updated Event| EG
+    EG -->|Trigger| FuncTrigger
+    
+    FuncTrigger -->|1. Save Payload| Blob
+    FuncTrigger -->|2. Read App Metadata| SP
+    FuncTrigger -->|3. Create/Update Ticket| Jira
+    FuncTrigger -->|4. Update Ticket URL| SP
+
+    %% Styling
+    classDef azure fill:#0072C6,stroke:#333,stroke-width:2px,color:white;
+    classDef external fill:#e1e1e1,stroke:#333,stroke-width:2px;
+    
+    class EntraID,KV,EG,FuncRotate,FuncTrigger,Blob azure;
+    class SP,Jira external;

@@ -1,0 +1,25 @@
+---
+id: 317727f1-9360-42a9-8777-a97384e330e7
+---
+graph TD
+    subgraph Managed Services ITOPS
+        A["<b>1. Proactive Detection</b><br>Our custom script finds secrets expiring soon"] --> B{"<b>2. Open SolMan Ticket in Bulk</b><br>Still a manual process, but streamlined"};
+        C[<b>3. WAIT</b><br>The process is still blocked by a handoff];
+        F["<b>4. Manual Data Entry</b><br>Receive secret from email and copy it"];
+        G["<b>5. Secure Storage & Sharing</b><br>Manually place secret in the correct <b>Azure Key Vault</b>."];
+        H["<b>6. Permission Assignment</b><br>Assign RBAC permissions for the new secret in Key Vault to the client's identities (MA accounts)."];
+        I{"<b>7. Manual Notification</b><br>Open a separate JIRA ticket to inform the secret owner and participants."};
+    end
+
+    subgraph CST[Core Sytems Team]
+        D[Receives Ticket] 
+        E["<b>3a. Create & Send Secret</b><br>Manually generates the secret and sends it via email."];
+    end
+
+C --> D
+B --> C
+E --> F
+F --> G
+G --> H
+H --> I
+D --> E
