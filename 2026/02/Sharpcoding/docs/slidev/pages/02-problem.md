@@ -37,14 +37,11 @@ class: text-sm
 
 # The legacy detection approach
 
-Someone runs scripts "every now and then" to discover what is expiring...
+- Someone runs scripts "every now and then" to discover what is expiring...
+-   ❌ Reactive, slow, and brittle
+-   ❌ No context or audit trail for operations
+-   ❌❌❌❌ I'm the one manually doing it, each month, through manually created tickets ❌❌❌❌
 
-<div class="text-xs max-h-56 overflow-auto">
-
-TODO insert image meme here
-
-</div>
-
-<div class="mt-4 text-red-500 font-bold">
-  ❌ Reactive, slow, and brittle
+<div class="flex items-center justify-center">
+  <img src="../images/programmer-move.png" class="max-h-[30vh] object-contain rounded-lg" />
 </div>

@@ -19,8 +19,8 @@ Turn incidents into a **proactive, event-driven** workflow.
 - **Jira + SharePoint**: ticketing and tracking
 - **Blob Storage**: immutable event replay and backups
 
+**"I'm wicked smart, and with AI I'll be done in 5 minutes"**
 </div>
-
 <div>
 
 ```mermaid {scale: 0.5}
@@ -33,6 +33,24 @@ graph TD
 ```
 
 </div>
+</div>
+
+---
+layout: two-cols
+class: text-sm
+---
+
+# More problems
+- What about resiliency
+- What about division of responsibilities and least privilege?
+- What about monitoring, alerting, and auditing?
+- What about backups and replay for recovery and compliance?
+- What about...?
+
+::right::
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/send-help.png" class="max-h-[30vh] object-contain rounded-lg" />
 </div>
 
 ---
@@ -76,7 +94,7 @@ graph TD
 
 ---
 layout: two-cols
-class: text-sm leading-tight
+class: text-sm
 ---
 
 # Business value: estimated monthly hours saved
@@ -103,5 +121,9 @@ class: text-sm leading-tight
 - Time shifts from firefighting to hardening and onboarding
 
 <div class="mt-3 text-xs opacity-75">
-Estimate based on recurring coordination-heavy operations across multiple teams.
+Estimate based on... ai
+
+I just made it up, since sometimes it was 4 days of actual work per month, sometimes just 2 hours
+
+Please don't tell everyone that I pulled these numbers out of thin air 🙈
 </div>

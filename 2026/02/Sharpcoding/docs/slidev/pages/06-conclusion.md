@@ -1,5 +1,32 @@
 ---
-layout: default
+layout: two-cols
+class: text-sm
+transition: slide-left
+---
+
+# Who observes the observer?
+
+Every function, workflow, and integration reports to **Application Insights** — so nothing fails silently.
+
+### Structured logging
+
+- All functions use `ILogger<T>` wired to Application Insights via the SDK
+- Correlation IDs propagate through Event Grid → Function chains
+- Tracing... just works?
+
+### Automatic alerting
+
+- Simple detection: exceptions > 0 = email with critical alert to team...
+- ...30 days to fix though
+
+::right::
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/vibe-coders.png" class="max-h-[30vh] object-contain rounded-lg" />
+</div>
+
+---
+layout: two-cols
 transition: slide-left
 ---
 
@@ -11,8 +38,10 @@ transition: slide-left
 - 🧾 **Auditable by design**: event payloads and backups for replay
 - 🧘 **Less toil**: fewer late-night surprises from expiry-driven outages
 
-<div class="mt-10 text-center">
-  <h2 class="text-4xl font-bold text-blue-500">Continuous Innovation = Reliable Ops</h2>
+::right::
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/me-smart.png" class="max-h-[30vh] object-contain rounded-lg" />
 </div>
 
 ---
