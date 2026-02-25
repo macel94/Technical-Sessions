@@ -16,15 +16,21 @@ transition: slide-left
 </div>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # Future improvements
 
-- Predict upcoming risk windows using historical rotation and incident data
-- Use AI to propose rotation timing with lowest business impact
-- Auto-generate owner-facing summaries and action checklists per app
-- Detect anomalous secret activity patterns earlier with assisted triage
-- Expand policy-as-code checks before deployment and before rotation
 - Add self-service dashboards for teams and clients with explainable status
+- Auto-generate owner-facing summaries and action checklists per app, possibly using AI (clustering)
+- Expand policy-as-code checks before deployment and before rotation
+- Improve app reg provisioning and deprovisioning workflows
+- Self-service secret rotation trigger for teams and clients, with explainable status and audit trails
+- Self-service app registration creation or onboarding for existing apps
+- More tests???
 
+::right::
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/test-in-prod-memedrivendotdev.png" alt="I don't always test my code, but when I do, I do it in production" class="max-h-[30vh] object-contain rounded-lg" />
+</div>

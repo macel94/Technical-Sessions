@@ -1,6 +1,6 @@
 <template>
   <div class="fixed inset-x-0 bottom-0 flex justify-center pointer-events-none select-none">
-    <img :src="footerImage" alt="Global footer" class="w-full max-w-[1100px] h-auto object-contain opacity-95" />
+    <img :src="footerImage" alt="Global footer" class="w-full max-h-[4vh] object-contain opacity-95" />
   </div>
 </template>
 
