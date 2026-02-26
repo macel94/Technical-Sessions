@@ -9,7 +9,7 @@ transition: slide-left
 - Event Grid **system topic** sourced from Key Vault
 - Delivery tuned for reliability: 3 attempts, 24h TTL
 
-```bicep {scale: 0.45}
+```bicep {*}{maxHeight:'280px'}
 param includedEventTypes array = [
 	'Microsoft.KeyVault.SecretNewVersionCreated'
 	'Microsoft.KeyVault.SecretNearExpiry'
@@ -41,7 +41,7 @@ transition: slide-left
 - **What-if** validates infra changes before any deployment
 - **Deploy** wires Event Grid subscriptions only after what-if passes
 
-```yaml {maxHeight:'280px'}
+```yaml {*}{maxHeight:'300px'}
 what_if:
   needs: create_pr
   environment: production
