@@ -1,38 +1,29 @@
 ---
-layout: default
+layout: two-cols
 transition: slide-left
 ---
 
 # The incident pattern we inherited
 
-<div class="grid grid-cols-2 gap-20">
-
-<div>
-
-### What actually breaks
+## What actually breaks
 - Critical apps go down with no warning
 - Logs show: "client secret expired"
 - Escalations, manual firefighting, long MTTR
-- **Security debt**: secrets shared out-of-band, weak audit trail
+- This stems from good intentions: "secrets should expire every 6 months" 
+- **Security debt**: secrets shared via chat or email, no audit trail
 
-</div>
-
-<div>
+::right::
 
 ```mermaid {scale: 0.6}
 graph TD
   A[App Down] -->|Panic| B(Manual ticket)
   B --> C{Wait for the right team}
-  C -->|Manual generation| D[Secret shared out-of-band]
+  C -->|Manual generation| D[Secret shared via chat/email]
   D -->|Risk + no audit| E[Restore service]
 ```
 
-</div>
-</div>
-
 ---
 layout: default
-class: text-sm
 ---
 
 # The legacy detection approach

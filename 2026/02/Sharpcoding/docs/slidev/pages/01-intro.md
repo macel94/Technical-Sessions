@@ -1,6 +1,5 @@
 ---
 layout: default
-class: text-sm leading-tight
 transition: slide-left
 ---
 
@@ -22,14 +21,14 @@ layout: two-cols
 transition: slide-left
 ---
 
-## Why this story
+# Why this story
 - Secrets expire on weekends and holidays too
-- Manual rotation creates security gaps and audit pain
+- Manual rotation = security gaps and audit pain
 - **Downtime** is the most expensive kind of learning
 
 ::right::
 
-## What changed
+# What changed
 - Event Grid + Functions replace manual scripts
 - Jira + SharePoint become the system of record
 - Backups and replay for forensic confidence
@@ -37,7 +36,6 @@ transition: slide-left
 
 ---
 layout: two-cols
-class: text-sm
 transition: slide-left
 ---
 

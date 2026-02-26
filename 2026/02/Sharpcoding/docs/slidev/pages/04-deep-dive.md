@@ -1,6 +1,6 @@
 ---
 layout: default
-class: text-sm
+
 transition: slide-left
 ---
 
@@ -27,7 +27,7 @@ public async Task Run([EventGridTrigger] CloudEvent cloudEvent)
 
 ---
 layout: default
-class: text-sm
+
 ---
 
 # Deep Dive: Proactive rotation (timer)
@@ -56,7 +56,7 @@ public async Task Run([TimerTrigger("0 0 6 * * *")] TimerInfo myTimer)
 
 ---
 layout: default
-class: text-sm
+
 ---
 
 # Deep Dive: Automatic validation (what used to be manual)

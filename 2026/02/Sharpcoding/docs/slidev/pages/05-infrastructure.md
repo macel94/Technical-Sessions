@@ -1,6 +1,6 @@
 ---
 layout: default
-class: text-sm
+
 transition: slide-left
 ---
 

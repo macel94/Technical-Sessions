@@ -1,6 +1,5 @@
 ---
 layout: default
-class: text-sm
 transition: slide-left
 ---
 
@@ -37,7 +36,7 @@ graph TD
 
 ---
 layout: two-cols
-class: text-sm
+
 ---
 
 # More problems
@@ -50,12 +49,12 @@ class: text-sm
 ::right::
 
 <div class="flex items-center justify-center h-full">
-  <img src="../images/send-help.png" class="max-h-[30vh] object-contain rounded-lg" />
+  <img src="../images/send-help.png" class="max-h-[50vh] object-contain rounded-lg" />
 </div>
 
 ---
 layout: center
-class: text-sm
+
 ---
 
 # Full architecture: close the loop
@@ -94,7 +93,7 @@ graph TD
 
 ---
 layout: two-cols
-class: text-sm
+
 ---
 
 # Business value: estimated monthly hours saved

@@ -1,6 +1,6 @@
 ---
 layout: two-cols
-class: text-sm
+
 transition: slide-left
 ---
 
@@ -33,7 +33,7 @@ transition: slide-left
 # Takeaways
 
 - ✅ **Zero downtime**: proactive secret rotation
-- 🔒 **Security-first operations**: no secret sharing out-of-band
+- 🔒 **Security-first operations**: no secrets shared manually outside secure channels
 - ⚡ **Serverless integration**: low ops overhead, scalable by default
 - 🧾 **Auditable by design**: event payloads and backups for replay
 - 🧘 **Less toil**: fewer late-night surprises from expiry-driven outages
