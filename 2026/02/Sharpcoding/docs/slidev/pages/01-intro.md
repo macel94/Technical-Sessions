@@ -1,31 +1,22 @@
 ---
-layout: default
+layout: two-cols
 transition: slide-left
 ---
 
 # Why this story
 
-<div class="grid grid-cols-2 gap-6">
-<div>
-
 ### Reality check
 - Secrets expire on weekends and holidays too
 - Manual rotation creates security gaps and audit pain
-- Downtime is the most expensive kind of learning
+- **Downtime** is the most expensive kind of learning
 
-</div>
-<div>
+::right::
 
 ### What changed
-- Event Grid + Functions replace "best effort" scripts
+- Event Grid + Functions replace manual scripts
 - Jira + SharePoint become the system of record
-- Backups and replay give us forensic confidence
-- A proven event-driven pattern for secret hygiene
-- Practical guardrails for auditability and resilience
-- A blueprint you can reuse across teams
-
-</div>
-</div>
+- Backups and replay for forensic confidence
+- A reusable blueprint for secret hygiene
 
 ---
 layout: default
