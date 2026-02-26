@@ -22,16 +22,14 @@ layout: two-cols
 transition: slide-left
 ---
 
-# Why this story
-
-### Reality check
+## Why this story
 - Secrets expire on weekends and holidays too
 - Manual rotation creates security gaps and audit pain
 - **Downtime** is the most expensive kind of learning
 
 ::right::
 
-### What changed
+## What changed
 - Event Grid + Functions replace manual scripts
 - Jira + SharePoint become the system of record
 - Backups and replay for forensic confidence
@@ -45,15 +43,18 @@ transition: slide-left
 
 # The real cost of downtime
 
-### Human impact
+## Human impact
 - On-call stress and weekend firefighting
 - Context switching derails planned work
 - Manual effort repeated every single month
 - Shared secrets erode hygiene and team trust
 
 ::right::
+<br/>
+<br/>
+<br/>
 
-### Business impact
+## Business impact
 
 We manage **150 app registrations**.  
 One failing secret on a critical integration:
