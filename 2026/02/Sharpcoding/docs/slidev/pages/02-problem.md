@@ -34,5 +34,5 @@ layout: default
 -   ❌❌❌❌ I'm the one manually doing it, each month, through manually created tickets ❌❌❌❌
 
 <div class="flex items-center justify-center">
-  <img src="../images/programmer-move.png" class="max-h-[30vh] object-contain rounded-lg" />
+  <img src="../images/programmer-move.png" class="max-h-[35vh] object-contain rounded-lg" />
 </div>

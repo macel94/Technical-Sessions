@@ -1,24 +1,15 @@
 ---
-layout: default
-
+layout: two-cols
+class: text-sm
 transition: slide-left
 ---
 
-# Infrastructure and delivery
-
-<div class="grid grid-cols-2 gap-6">
-
-<div>
-
-### IaC with Bicep
+# IaC with Bicep
 
 - Event Grid **system topic** sourced from Key Vault
-- CloudEvents schema, retry policy, filtered event types
-- Subscription-scope `main.subscription.bicep` for per-client rollouts
-- Event types include `SecretNewVersionCreated`, `SecretNearExpiry`, `SecretExpired`
-- Delivery tuned for reliability: 3 attempts, 24h TTL, 1 event per batch
+- Delivery tuned for reliability: 3 attempts, 24h TTL
 
-```bicep {1-12}
+```bicep {scale: 0.45}
 param includedEventTypes array = [
 	'Microsoft.KeyVault.SecretNewVersionCreated'
 	'Microsoft.KeyVault.SecretNearExpiry'
@@ -34,31 +25,61 @@ properties: {
 }
 ```
 
-</div>
+::right::
 
-<div>
+<!-- meme image here -->
 
-### CI/CD (GitHub Actions)
+---
+layout: two-cols
+class: text-sm
+transition: slide-left
+---
 
-- Restore → build → test → publish → zip
-- Deploy via `Azure/functions-action`
-- Onboarding workflow generates parameter files and PRs per client
-- What-if and deploy stages for Event Grid wiring
+# CI/CD pipeline
 
-```yaml {1-10}
-- name: Build SecretRenewalFunctions
-	run: dotnet build --configuration Release --no-restore
+- Onboarding workflow generates parameter files and opens a PR per client
+- **What-if** validates infra changes before any deployment
+- **Deploy** wires Event Grid subscriptions only after what-if passes
 
-- name: Test
-	run: dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
+```yaml {maxHeight:'280px'}
+what_if:
+  needs: create_pr
+  environment: production
+  steps:
+    - uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ inputs.subscriptionId }}
+    - name: What-if deployment
+      run: |
+        az deployment sub what-if \
+          --subscription "${{ inputs.subscriptionId }}" \
+          --location "${{ inputs.location }}" \
+          --template-file infra/main.subscription.bicep \
+          --parameters @infra/parameters/kv-eg-sub-${{ needs.create_pr.outputs.short_sub }}.parameters.json
 
-- name: Publish SecretRenewalFunctions
-	run: dotnet publish src/SecretRenewalFunctions/SecretRenewalFunctions.csproj --configuration Release --no-build
+deploy:
+  needs: [create_pr, what_if]
+  environment: production
+  steps:
+    - uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ inputs.subscriptionId }}
+    - name: Deploy Event Grid system topic
+      run: |
+        az deployment sub create \
+          --subscription "${{ inputs.subscriptionId }}" \
+          --location "${{ inputs.location }}" \
+          --template-file infra/main.subscription.bicep \
+          --parameters @infra/parameters/kv-eg-sub-${{ needs.create_pr.outputs.short_sub }}.parameters.json
 ```
 
-</div>
+::right::
 
-</div>
+<!-- meme image here -->
 
 ---
 layout: two-cols
