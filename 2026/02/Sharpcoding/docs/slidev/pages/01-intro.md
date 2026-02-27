@@ -5,16 +5,11 @@ transition: slide-left
 
 # Agenda
 
-- The incident pattern and why it repeats
-- Design goals: security, auditability, zero-downtime
-- Event-driven architecture on Azure
-- Business impact: estimated hours saved per month
-- Deep dive: Event Grid trigger and rotation
-- Operations: SharePoint sync and backups
-- IaC + delivery: Bicep, GitHub Actions, Dependabot
-- Copilot support for implementation and documentation
-- Future improvements: AI-assisted operations
-- Takeaways and practical next steps
+- **Problem** — the incident pattern and why manual rotation fails
+- **Solution** — event-driven architecture: Event Grid, Functions, Key Vault
+- **Deep Dive** — trigger, proactive rotation, and sync validation
+- **Infrastructure** — IaC with Bicep, CI/CD, GitHub Actions
+- **Conclusion** — observability, takeaways, and what's next
 
 ---
 layout: two-cols
