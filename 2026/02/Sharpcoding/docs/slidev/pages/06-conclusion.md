@@ -52,11 +52,10 @@ layout: two-cols
 
 - Add self-service dashboards for teams and clients with explainable status
 - Auto-generate owner-facing summaries and action checklists per app, possibly using AI (clustering)
-- Expand policy-as-code checks before deployment and before rotation
-- Improve app reg provisioning and deprovisioning workflows
 - Self-service secret rotation trigger for teams and clients, with explainable status and audit trails
 - Self-service app registration creation or onboarding for existing apps
-- More tests???
+- More tests
+- Whatever you suggest in the Q&A!
 
 ::right::
 

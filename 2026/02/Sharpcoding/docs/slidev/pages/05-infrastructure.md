@@ -24,10 +24,6 @@ properties: {
 }
 ```
 
-::right::
-
-<!-- meme image here -->
-
 ---
 layout: default
 transition: slide-left
@@ -75,12 +71,8 @@ deploy:
           --parameters @infra/parameters/kv-eg-sub-${{ needs.create_pr.outputs.short_sub }}.parameters.json
 ```
 
-::right::
-
-<!-- meme image here -->
-
 ---
-layout: two-cols
+layout: default
 ---
 
 # GitHub as force multiplier
@@ -88,15 +80,18 @@ layout: two-cols
 ### Delivery and platform workflows
 
 - GitHub Actions standardizes build, test, publish, and deployment gates
-- Onboarding workflows generate repeatable infra changes per client
-- Pull requests become a shared operating model across teams
+- Onboarding workflows generate repeatable, standard infra changes per client
+- Pull requests become a shared operating model across teams (self-service)
 
 ### Dependency hygiene
 
-- Dependabot keeps NuGet and action versions current
+- Dependabot
 - Security and maintenance updates are visible, reviewable, and trackable
 
-::right::
+---
+layout: two-cols
+transition: slide-left
+---
 
 # GitHub Copilot impact
 
@@ -104,3 +99,9 @@ layout: two-cols
 - Helps produce clearer docs and runbooks while coding
 - Accelerates this Slidev presentation creation and iteration
 - Frees engineering time for architecture and reliability decisions
+
+::right::
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/copilot-captain.png" class="max-h-[40vh] object-contain rounded-lg" />
+</div>
