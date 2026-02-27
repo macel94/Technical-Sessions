@@ -14,6 +14,7 @@ transition: slide-left
 
 ::right::
 
+<div class="flex items-center justify-center">
 ```mermaid {scale: 0.6}
 graph TD
   A[App Down] -->|Panic| B(Manual ticket)
@@ -21,6 +22,22 @@ graph TD
   C -->|Manual generation| D[Secret shared via chat/email]
   D -->|Risk + no audit| E[Restore service]
 ```
+</div>
+
+---
+layout: default
+---
+
+# We gained trust from our global GA Team
+
+- We could not assign permissions for keyvaults that we owned
+- We could not create secrets autonomously
+- But in our tenant user consent is disabled
+- Application Developer role exists
+
+<div class="flex items-center justify-center">
+  <img src="../images/we-can-own-apps.png" class="max-h-[33vh] object-contain rounded-lg" />
+</div>
 
 ---
 layout: default
@@ -28,11 +45,12 @@ layout: default
 
 # The legacy detection approach
 
+- Once we got permissions to create secrets (Owners)
 - Someone runs scripts "every now and then" to discover what is expiring...
--   ❌ Reactive, slow, and brittle
--   ❌ No context or audit trail for operations
--   ❌❌❌❌ I'm the one manually doing it, each month, through manually created tickets ❌❌❌❌
+- ❌ Still manual, slow, and brittle
+- ❌ No context or audit trail for operations
+- ❌❌❌❌ I'm the one manually doing it, each month ❌❌❌❌
 
 <div class="flex items-center justify-center">
-  <img src="../images/programmer-move.png" class="max-h-[35vh] object-contain rounded-lg" />
+  <img src="../images/programmer-move.png" class="max-h-[33vh] object-contain rounded-lg" />
 </div>

@@ -29,6 +29,7 @@ transition: slide-left
 ::right::
 
 # What changed
+- We gained trust (aka permissions)
 - Event Grid + Functions replace manual scripts
 - Jira + SharePoint become the system of record
 - Backups and replay for forensic confidence
@@ -47,8 +48,12 @@ transition: slide-left
 - Manual effort repeated every single month
 - Shared secrets erode hygiene and team trust
 
+<div class="flex items-center justify-center">
+  <img src="../images/fix-prod-fast.png" class="max-h-[30vh] object-contain rounded-lg" />
+</div>
+
 ::right::
-<br/>
+
 <br/>
 <br/>
 
