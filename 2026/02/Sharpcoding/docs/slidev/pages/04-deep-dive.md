@@ -1,6 +1,5 @@
 ---
 layout: default
-
 transition: slide-left
 ---
 
@@ -27,7 +26,7 @@ public async Task Run([EventGridTrigger] CloudEvent cloudEvent)
 
 ---
 layout: default
-
+transition: slide-left
 ---
 
 # Deep Dive: Proactive rotation (timer)
@@ -56,15 +55,27 @@ public async Task Run([TimerTrigger("0 0 6 * * *")] TimerInfo myTimer)
 
 ---
 layout: default
-
+transition: slide-left
 ---
 
 # Deep Dive: Automatic validation (what used to be manual)
 
-The twice-daily sync validates each SharePoint row and repairs metadata:
+The twice-daily sync validates each SharePoint row and repairs metadata
 
 - Normalize Key Vault references and flag invalid formats
 - Ensure the App ID still exists in Entra ID
 - Verify owners in Jira and Entra; enforce account ownership patterns
 - Confirm Key Vault secret exists and assign Secrets User when needed
 - Validate Jira ticket URL and creation window vs. expiry dates
+
+---
+layout: center
+transition: slide-left
+---
+
+# Deep Dive: Sharepoint as the system of record
+
+
+<div class="flex items-center justify-center h-full">
+  <img src="../images/sharepoint.png" class="max-h-[30vh] object-contain rounded-lg" />
+</div>

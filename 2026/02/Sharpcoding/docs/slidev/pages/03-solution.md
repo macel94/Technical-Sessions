@@ -96,33 +96,23 @@ layout: two-cols
 
 ---
 
-# Business value: estimated monthly hours saved
+# Business value
 
-### For 150 app registrations
+| Model | Time/app/month |
+|---|---|
+| Manual | ~35 min |
+| Automated | ~8 min |
 
-- Manual model (monitoring + coordination + updates): about 35 min per app per month
-- Automated model (exceptions + approvals + review): about 8 min per app per month
-- Estimated saving: about 27 min per app per month
-
-### Monthly impact
-
-- 150 x 27 min = 4,050 min per month
-- About 67.5 hours saved every month
-- At 200 apps, about 90 hours saved per month
+**150 apps → ~67.5 hours saved/month**
 
 ::right::
 
-# Why this matters across teams
+# Why it matters
 
-- Fewer cross-team status pings and handoffs
-- Less waiting between Wuerth teams and client teams
-- Faster renewals with a shared system of record (Jira + SharePoint)
-- Time shifts from firefighting to hardening and onboarding
+- Less cross-team coordination and handoffs
+- Shared system of record (Jira + SharePoint)
+- Time shifts from firefighting to development
 
 <div class="mt-3 text-xs opacity-75">
-Estimate based on... ai
-
-I just made it up, since sometimes it was 4 days of actual work per month, sometimes just 2 hours
-
-Please don't tell everyone that I pulled these numbers out of thin air 🙈
+(numbers are based on VIBES — trust the trend, not the math 🙈)
 </div>

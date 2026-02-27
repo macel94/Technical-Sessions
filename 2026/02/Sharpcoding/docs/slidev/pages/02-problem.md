@@ -30,10 +30,10 @@ layout: default
 
 # We gained trust from our global GA Team
 
-- We could not assign permissions for keyvaults that we owned
 - We could not create secrets autonomously
 - But in our tenant user consent is disabled
 - Application Developer role exists
+- We could not assign permissions for keyvaults that we owned --> custom role
 
 <div class="flex items-center justify-center">
   <img src="../images/we-can-own-apps.png" class="max-h-[33vh] object-contain rounded-lg" />

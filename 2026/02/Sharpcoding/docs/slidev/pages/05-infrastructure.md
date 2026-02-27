@@ -1,6 +1,5 @@
 ---
-layout: two-cols
-class: text-sm
+layout: default
 transition: slide-left
 ---
 
@@ -9,7 +8,7 @@ transition: slide-left
 - Event Grid **system topic** sourced from Key Vault
 - Delivery tuned for reliability: 3 attempts, 24h TTL
 
-```bicep {*}{maxHeight:'280px'}
+```bicep 
 param includedEventTypes array = [
 	'Microsoft.KeyVault.SecretNewVersionCreated'
 	'Microsoft.KeyVault.SecretNearExpiry'
@@ -30,8 +29,7 @@ properties: {
 <!-- meme image here -->
 
 ---
-layout: two-cols
-class: text-sm
+layout: default
 transition: slide-left
 ---
 
